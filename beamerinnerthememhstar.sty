@@ -1,0 +1,117 @@
+% Inner style for BEAMER mhstar theme
+% Copyright 2017 by Minghui Zhao
+% This file may be distributed and/or modified
+%       1. under the LaTex Project Public License and/or
+%       2. under the GNU public License.
+%
+% Author: Minghui Zhao<mhzhao@iastate.edu>.
+
+\mode<presentation>
+
+\usepackage[timeinterval=1]{tdclock}
+\usepackage{pifont}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usepackage{xparse}
+\pgfmathdeclarerandomlist{randomcolor}{
+  {blue}
+  {brown}
+  {cyan}
+  {darkgray}
+  {gray}
+  {green}
+  {lightgray}
+  {lime}
+  {magenta}
+  {olive}
+  {orange}
+  {pink}
+  {purple}
+  {red}
+  {teal}
+  {violet}
+  {white}
+  {yellow}
+}
+\newcommand\totalnum{\inserttotalframenumber}
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=black] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+  \path [left color = black,right color = black,middle color = red] (0.0,0.91*\the\paperheight) rectangle (.2*\the\paperwidth,0.92*\the\paperheight);
+  \path [left color = black,right color = black,middle color = cyan] (0.2*\the\paperwidth,0.91*\the\paperheight) rectangle (0.4*\the\paperwidth,0.92*\the\paperheight);
+  \path [left color = black,right color = black,middle color = white] (0.4*\the\paperwidth,0.91*\the\paperheight) rectangle (0.6*\the\paperwidth,0.92*\the\paperheight);
+  \path [left color = black,right color = black,middle color = yellow] (0.6*\the\paperwidth,0.91*\the\paperheight) rectangle (0.8*\the\paperwidth,0.92*\the\paperheight);
+  \path [left color = black,right color = black,middle color = green] (0.8*\the\paperwidth,0.91*\the\paperheight) rectangle (1.0*\the\paperwidth,0.92*\the\paperheight);
+  \node [color=white] at (12,9.1) 
+  {\initclock{\color{yellow}{\factorclockfont{0.5}\tdtime}}};
+  \foreach \x in {1,...,500}
+  {
+    \pgfmathrandominteger{\a}{0}{130}
+    \pgfmathrandomitem{\rndcolor}{randomcolor}
+    \fill [color=\rndcolor] (\a/10,0.45) circle (0.06);
+  };
+  \foreach \y in {1,...,\totalnum} 
+  {
+    \fill [color=orange] (\y,0.85) circle (0.06);
+  };
+  %\ifnum\thepage>10\relax%
+  % \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  % \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{mhstar}[1][]
+{ 
+   \vskip2.5cm%
+    \begin{beamercolorbox}[center,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[center,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[center,#1]{institute}
+      \usebeamerfont{author}\insertinstitute%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[center,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+\iffalse
+% to be finished for the part and section page
+% Part page: mhstar
+\defbeamertemplate*{part page}{mhstar}[1][]
+{
+  \begingroup
+  \begin{tikzpicture}[remember picture,overlay]
+    \node at (current page.north west){
+      \begin{tikzpicture}[remember picture, overlay]%
+        \node[anchor=north] at (1cm,-1.25cm){
+          \color{green!40}\fontsize{800pt}{960}\sffamily\bfseries\selectfont\insertromanpartnumber
+        };
+      \end{tikzpicture}
+    };
+  \end{tikzpicture}
+   % {\usebeamerfont{part name}\usebeamercolor[green]{part name}\partname~\insertromanpartnumber}
+   % \vskip1em\par
+   % \begin{beamercolorbox}[sep=16pt,center,#1]{part title}
+   %   \usebeamerfont{part title}\insertpart\par
+   % \end{beamercolorbox}
+  \endgroup
+}
+\AtBeginPart{\frame{\partpage}}
+\AtBeginSection{\frame{\sectionpage}}
+\fi
+
+% Itemize items, mhstar 
+\defbeamertemplate*{itemize item}{mhstar}{\small\raise1.0pt\hbox{\textcolor{green}{\ding{43}}}}
+\defbeamertemplate*{itemize subitem}{mhstar}{\footnotesize\raise1.0pt\hbox{\color{red}\ding{45}}}
+\defbeamertemplate*{itemize subsubitem}{mhstar}{\footnotesize\raise1.0pt\hbox{\color{white}\donotcoloroutermaths$\blacktriangleright$}}
+
+\mode
+<all>

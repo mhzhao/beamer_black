@@ -1,0 +1,34 @@
+% Outer style for BEAMER mhstar theme
+% Copyright 2017 by Minghui Zhao
+% This file may be distributed and/or modified
+%       1. under the LaTex Project Public License and/or
+%       2. under the GNU public License.
+%
+% Author: Minghui Zhao<mhzhao@iastate.edu>.
+
+\mode<presentation>
+
+\usepackage{tikz}
+\usepackage{textpos}
+% Headline and footline
+\defbeamertemplate*{footline}{mhstar theme} {
+  \leavevmode%
+  \hbox{
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=3.5ex,dp=1.125ex,leftskip=.3cm, rightskip=.3cm plus1fil]{author in head/foot}%
+    \usebeamerfont{author in head/foot}
+	\insertshortauthor  
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=3.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}{\textit \insertshorttitle}%
+    \hskip50ex plus1fil%
+		% \insertpagenumber\,/\,\insertpresentationendpage %% Want FRAME, not SLIDE number
+		\insertframenumber/\inserttotalframenumber
+ \end{beamercolorbox}%
+ }
+}
+\defbeamertemplate*{frametitle}{mhstar theme} {
+  \leavevmode%
+  \begin{beamercolorbox}[wd=\paperwidth,sep=5pt,leftskip=.3cm, rightskip=.3cm]{frametitle}%
+    \insertframetitle
+  \end{beamercolorbox}%
+}
