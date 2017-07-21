@@ -10,6 +10,9 @@
 
 \usepackage{tikz}
 \usepackage{textpos}
+\usepackage{assoccnt}
+\newcounter{totalsections}
+\DeclareAssociatedCounters{section}{totalsections}
 % Headline and footline
 \defbeamertemplate*{footline}{mhstar theme} {
   \leavevmode%
@@ -26,9 +29,31 @@
  \end{beamercolorbox}%
  }
 }
+
+%\regtotcounter{section}
+\defbeamertemplate*{headline}{mhstar theme} {
+  \leavevmode%
+  \hbox{
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.65ex,dp=1.5ex,right]{section in head/foot}%
+      \usebeamerfont{section in head/foot}
+      %\insertpagenumber\hspace*{2ex}
+      
+      %\insertsectionstartpage\hspace*{2ex}
+      
+      %\insertsectionendpage\hspace*{2ex}
+      
+      %\number\value{totalsections}\hspace*{2ex}
+      
+      %\number\beamer@sectionmax%\hspace*{2ex}
+    \end{beamercolorbox}%
+  }
+}
+
 \defbeamertemplate*{frametitle}{mhstar theme} {
   \leavevmode%
-  \begin{beamercolorbox}[wd=\paperwidth,sep=5pt,leftskip=.3cm, rightskip=.3cm]{frametitle}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=0.7ex,leftskip=.3cm, rightskip=.3cm]{frametitle}%
+    \vspace{+1ex}
+    \usebeamerfont{frametitle}
     \insertframetitle
   \end{beamercolorbox}%
 }

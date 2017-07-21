@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.80.0 (TeX Live 2015) (rev 5238)  (format=lualatex 2015.12.29)  14 JUL 2017 15:24
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015) (rev 5238)  (format=lualatex 2015.12.29)  21 JUL 2017 14:19
  restricted \write18 enabled.
 **mhstar-example.tex
 (./mhstar-example.tex
@@ -814,6 +814,10 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryfadings.code.tex
 File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
 
@@ -946,22 +950,334 @@ Package: xparse 2015/11/04 v6224 L3 Experimental document command parser
 \l__xparse_mandatory_args_int=\count188
 \l__xparse_processor_int=\count189
 \l__xparse_v_nesting_int=\count190
-))
-(./beamerouterthememhstar.sty
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+Package: fontawesome 2015/07/30 v4.4.0 font awesome icons
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-ge
+neric.tex) (/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/luatex/luaotfload/luaotfload.sty
+Package: luaotfload 2014/08/10 v2.5-4 OpenType layout system
+
+(/usr/local/texlive/2015/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(/usr/local/texlive/2015/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count191
+)
+\CatcodeTableOther=\catcodetable6
+\CatcodeTableExpl=\catcodetable7
+)
+Lua module: luaotfload-main 2014/08/10 2.50003 OpenType layout system.(using wri
+te cache: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/generic)(usi
+ng read cache: /usr/local/texlive/2015/texmf-var/luatex-cache/generic /Users/mhz
+hao/Library/texlive/2015/texmf-var/luatex-cache/generic)
+Lua-only attribute luaotfload@kernpair = 1
+Lua-only attribute luaotfload@ligacomp = 2
+Lua-only attribute luaotfload@markbase = 3
+Lua-only attribute luaotfload@markmark = 4
+Lua-only attribute luaotfload@markdone = 5
+Lua-only attribute luaotfload@cursbase = 6
+Lua-only attribute luaotfload@curscurs = 7
+Lua-only attribute luaotfload@cursdone = 8
+Lua-only attribute luaotfload@state = 9
+luaotfload | main : fontloader loaded in 0.020 seconds
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.find_vf_file' at position 1 in `find_vf_file'.
+luaotfload | conf : Root cache directory is /Users/mhzhao/Library/texlive/2015/t
+exmf-var/luatex-cache/generic/names.
+luaotfload | conf : Root cache directory is /Users/mhzhao/Library/texlive/2015/t
+exmf-var/luatex-cache/generic/names.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
+.)
+Lua module: fontspec 2013/05/20 2.3c Advanced font selection for LuaLaTeX.
+\l_fontspec_script_int=\count192
+\l_fontspec_language_int=\count193
+\l_fontspec_strnum_int=\count194
+\l__fontspec_tmpa_dim=\dimen288
+\l__fontspec_tmpb_dim=\dimen289
+\l__fontspec_tmpc_dim=\dimen290
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-patches.sty
+Package: fontspec-patches 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaT
+eX
+LaTeX Info: Redefining \em on input line 49.
+LaTeX Info: Redefining \emph on input line 57.
+LaTeX Info: Redefining \- on input line 60.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 155.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 159.
+.................................................
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaTe
+X
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu2enc.def
+File: eu2enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU2+lmr on input line 105.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu2lmr.fd
+File: eu2lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+luaotfload | db : Font names database loaded from /Users/mhzhao/Library/texlive/
+2015/texmf-var/luatex-cache/generic/names/luaotfload-names.luc(compiling luc: /u
+sr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman10-regular
+.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/generi
+c/fonts/otf/lmroman10-regular.luc))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many o
+ther characters in Unicode lower plane
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf
+/lmromanslant10-regular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-
+var/luatex-cache/generic/fonts/otf/lmromanslant10-regular.luc)(compiling luc: /u
+sr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman10-italic.
+luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/generic
+/fonts/otf/lmroman10-italic.luc)(compiling luc: /usr/local/texlive/2015/texmf-va
+r/luatex-cache/generic/fonts/otf/lmroman10-bold.luc)(load luc: /Users/mhzhao/Lib
+rary/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman10-bold.luc)
+LaTeX Font Info:    Try loading font information for EU2+lmss on input line 357.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu2lmss.fd
+File: eu2lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/ot
+f/lmsans10-regular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/l
+uatex-cache/generic/fonts/otf/lmsans10-regular.luc))
+\tipaTiiicode=\count195
+\tipasavetokens=\toks48
+\tipachecktokens=\toks49
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 45.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 47.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 57.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 67.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 77.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 91.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 99.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 107.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 115.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 129.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 144.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 158.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 214.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 225.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 233.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 241.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 262.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 271.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 276.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 322.
+.................................................
+\l__fontspec_tmp_int=\count196
+LaTeX Info: Redefining \itshape on input line 2151.
+LaTeX Info: Redefining \slshape on input line 2156.
+LaTeX Info: Redefining \scshape on input line 2161.
+LaTeX Info: Redefining \upshape on input line 2166.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+\g__file_internal_ior=\read2
+luaotfload | cache : Lookup cache loaded from /Users/mhzhao/Library/texlive/2015
+/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"(compiling lu
+c: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/fontawesome.
+luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/generic
+/fonts/otf/fontawesome.luc)
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | aux : font no 24 (FontAwesome) defines no feature for script latn
+luaotfload | aux : no font with id 24
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font FontAwesome does not contain any OpenType `Script' information.
+.................................................
+\g__fontspec_family_FontAwesome_int=\count197
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FontAwesome/BI (it probably doesn't exist).
+.................................................
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FontAwesome/B (it probably doesn't exist).
+.................................................
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font FontAwesome/I (it probably doesn't exist).
+.................................................
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+luaotfload | aux : font no 24 (FontAwesome) does not define feature smcp for scr
+ipt  with language 
+luaotfload | aux : no font with id 24
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FontAwesome(0)' created for font 'FontAwesome' with options [].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"FontAwesome:mode=node;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-xe
+luatex.tex))) (./beamerouterthememhstar.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2014/01/03 v1.7j
 
 Package: textpos 2014/01/03 1.7j, absolute positioning of text on the page
 \TP@textbox=\box74
-\TPHorizModule=\dimen288
-\TPVertModule=\dimen289
-\TP@margin=\dimen290
-\TP@absmargin=\dimen291
+\TPHorizModule=\dimen291
+\TPVertModule=\dimen292
+\TP@margin=\dimen293
+\TP@absmargin=\dimen294
 Grid set 16 x 16 = 22.7622pt x 17.07166pt
-\TPboxrulesize=\dimen292
-\TP@tbargs=\toks48
-\TP@prevdepth=\dimen293
-)) (./beamercolorthememhstar.sty)) (./mhstar-example.aux)
+\TPboxrulesize=\dimen295
+\TP@tbargs=\toks50
+\TP@prevdepth=\dimen296
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/assoccnt/assoccnt.sty
+Package: assoccnt 2015/09/29 v0.8-- Associate counters stepping
+
+assoccnt.sty{} -- version v0.8
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count198
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write5
+\integerpart=\count199
+\decimalpart=\count266
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@@@assoccnt@@internalcounter=\count267
+)
+\c@totalsections=\count268
+)
+(./beamercolorthememhstar.sty)) (./mhstar-example.aux)
 \openout1 = mhstar-example.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -977,6 +1293,15 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 9.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 9.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
 LaTeX Font Info:    ... okay on input line 9.
 
 *geometry* driver: auto-detecting
@@ -1015,17 +1340,17 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count191
-\scratchdimen=\dimen294
+\scratchcounter=\count269
+\scratchdimen=\dimen297
 \scratchbox=\box75
-\nofMPsegments=\count192
-\nofMParguments=\count193
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count194
-\MPscratchDim=\dimen295
-\MPnumerator=\count195
-\makeMPintoPDFobject=\count196
-\everyMPtoPDFconversion=\toks50
+\nofMPsegments=\count270
+\nofMParguments=\count271
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count272
+\MPscratchDim=\dimen298
+\MPnumerator=\count273
+\makeMPintoPDFobject=\count274
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1050,16 +1375,16 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count197
+\c@section@level=\count275
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
 (./mhstar-example.out) (./mhstar-example.out)
-\@outlinefile=\write5
+\@outlinefile=\write6
 
-\openout5 = mhstar-example.out
+\openout6 = mhstar-example.out
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -1067,51 +1392,41 @@ LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 9.
+(Font)                  OT1/cmss/m/n --> EU2/lmr/m/n on input line 9.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 9.
+(Font)                  OT1/cmr/bx/n --> EU2/lmss/bx/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 9.
+(Font)                  OT1/cmr/bx/n --> EU2/lmss/bx/n on input line 9.
 LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 9.
+(Font)                  OT1/cmss/m/n --> EU2/lmss/m/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 9.
+(Font)                  OT1/cmss/bx/n --> EU2/lmss/m/n on input line 9.
 LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 9.
+(Font)                  OT1/cmr/m/it --> EU2/lmss/m/it on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 9.
+(Font)                  OT1/cmr/bx/it --> EU2/lmss/m/it on input line 9.
 LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 9.
+(Font)                  OT1/cmtt/m/n --> EU2/lmtt/m/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 9.
+(Font)                  OT1/cmtt/m/n --> EU2/lmtt/m/n on input line 9.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 9.
+(Font)                  EU2/lmss/m/n --> EU2/lmss/bx/n on input line 9.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 9.
+(Font)                  EU2/lmss/m/it --> EU2/lmss/bx/it on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 9.
+(Font)                  OT1/cmss/bx/n --> EU2/lmr/bx/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 9.
+(Font)                  EU2/lmss/bx/n --> EU2/lmss/bx/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 9.
+(Font)                  EU2/lmss/m/n --> EU2/lmss/bx/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 9.
+(Font)                  EU2/lmss/m/it --> EU2/lmss/bx/it on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 9.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 9.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 9.
-
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 9
-.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inpu
-t line 9.
+(Font)                  EU2/lmtt/m/n --> EU2/lmtt/bx/n on input line 9.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1138,29 +1453,114 @@ r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 9.
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 9.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 9.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 9.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 9.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 9.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 9.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 9.
+LaTeX Font Info:    Redeclaring math accent \check on input line 9.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 9.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 9.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 9.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 9.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU2' for symbol font
+(Font)              `operators' in the math version `normal' on input line 9.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU2/lmr/m/n on input line 9.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU2' for symbol font
+(Font)              `operators' in the math version `bold' on input line 9.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU2/lmr/m/n on input line 9.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU2/lmr/m/n --> EU2/lmr/m/n on input line 9.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  EU2/lmss/m/it --> EU2/lmr/m/it on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  EU2/lmss/bx/n --> EU2/lmr/bx/n on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  EU2/lmss/m/n --> EU2/lmss/m/n on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  EU2/lmtt/m/n --> EU2/lmtt/m/n on input line 9.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU2/lmr/m/n --> EU2/lmr/bx/n on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  EU2/lmss/bx/it --> EU2/lmr/bx/it on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  EU2/lmss/bx/n --> EU2/lmss/bx/n on input line 9.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  EU2/lmtt/bx/n --> EU2/lmtt/bx/n on input line 9.
 
-(./mhstar-example.nav)
-Overfull \hbox (2.12502pt too wide) in paragraph at lines 9--9
+(./mhstar-example.nav)(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-c
+ache/generic/fonts/otf/lmsans8-regular.luc)(load luc: /Users/mhzhao/Library/texl
+ive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmsans8-regular.luc)
+LaTeX Font Info:    Font shape `EU2/lmss/m/it' in size <6> not available
+(Font)              Font shape `EU2/lmss/m/sl' tried instead on input line 9.
+(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf
+/lmsans8-oblique.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/lua
+tex-cache/generic/fonts/otf/lmsans8-oblique.luc)
+Overfull \hbox (2.12398pt too wide) in paragraph at lines 9--9
 [][][][][]  
  []
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf
+/lmsans12-regular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/lu
+atex-cache/generic/fonts/otf/lmsans12-regular.luc)
+LaTeX Font Info:    Try loading font information for EU2+lmtt on input line 13.
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 13.
-
-
-Overfull \hbox (2.12502pt too wide) has occurred while \output is active
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu2lmtt.fd
+File: eu2lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/ot
+f/lmmono10-regular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/l
+uatex-cache/generic/fonts/otf/lmmono10-regular.luc){/usr/local/texlive/2015/texm
+f-var/fonts/map/pdftex/updmap/pdftex.map}
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
 [][][][][] 
  []
 
 [1
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
 
-]
+](compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/ot
+f/lmsans9-regular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/lu
+atex-cache/generic/fonts/otf/lmsans9-regular.luc)(compiling luc: /usr/local/texl
+ive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman9-regular.luc)(load luc
+: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/lm
+roman9-regular.luc)(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cach
+e/generic/fonts/otf/lmroman6-regular.luc)(load luc: /Users/mhzhao/Library/texliv
+e/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman6-regular.luc)(compiling 
+luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf/lmroman5-r
+egular.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/luatex-cache/
+generic/fonts/otf/lmroman5-regular.luc)
 LaTeX Font Info:    Try loading font information for U+msa on input line 28.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 28.
@@ -1168,72 +1568,166 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input l
-ine 28.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mat
-hkerncmss.
-)
-Overfull \hbox (2.12502pt too wide) has occurred while \output is active
+LaTeX Font Info:    Font shape `EU2/lmss/m/it' in size <9> not available
+(Font)              Font shape `EU2/lmss/m/sl' tried instead on input line 28.
+(compiling luc: /usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otf
+/lmsans9-oblique.luc)(load luc: /Users/mhzhao/Library/texlive/2015/texmf-var/lua
+tex-cache/generic/fonts/otf/lmsans9-oblique.luc)
+LaTeX Font Info:    Font shape `EU2/lmss/m/it' in size <5> not available
+(Font)              Font shape `EU2/lmss/m/sl' tried instead on input line 28.
+luaotfload | load : Lookup/name: "FontAwesome" -> "FontAwesome.otf"
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
 [][][][][] 
  []
 
 [2
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
 
 ]
-\tf@nav=\write6
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
 
-\openout6 = mhstar-example.nav
-\tf@toc=\write7
+[3
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
 
-\openout7 = mhstar-example.toc
-\tf@snm=\write8
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
 
-\openout8 = mhstar-example.snm
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 30.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 30.
+[4
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[5
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[6
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[7
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[8
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[9
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+Overfull \hbox (2.12398pt too wide) has occurred while \output is active
+[][][][][] 
+ []
+
+[10
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+
+]
+\tf@nav=\write7
+
+\openout7 = mhstar-example.nav
+\tf@toc=\write8
+
+\openout8 = mhstar-example.toc
+\tf@snm=\write9
+
+\openout9 = mhstar-example.snm
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (./mhstar-example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 30.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 30.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `mhstar-example.out' has not changed.
-(rerunfilecheck)             Checksum: F173B9CF462320B4C367F48DAFC14EDE;93.
-
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.0pt have occurred.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 30.
+(rerunfilecheck)             Checksum: 4176792CBF7AE7C323D10A5C272017BB;132.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
 )
 
 Here is how much of LuaTeX's memory you used:
- 27591 strings out of 494897
- 100000,794899 words of node,token memory allocated
- 1957 words of node memory still in use:
-   44 hlist, 8 vlist, 2 rule, 2 math, 79 glue, 5 kern, 24 penalty, 35 glyph, 104
- glue_spec, 3 write, 6 local_par, 16 pdf_literal, 8 pdf_refxform, 56 pdf_colorst
-ack nodes
-   avail lists: 1:1,2:26,3:6794,4:2461,5:83,6:172,7:27,8:46,9:256,10:18
- 30155 multiletter control sequences out of 65536+600000
- 46 fonts using 1818595 bytes
- 61i,17n,91p,1251b,1101s stack positions out of 5000i,500n,10000p,200000b,100000s
-LuaTeX warning (dest): name{Navigation4} has been referenced but does not exist,
- replaced by a fixed one
+ 36475 strings out of 494897
+ 100000,953878 words of node,token memory allocated
+ 1366 words of node memory still in use:
+   30 hlist, 9 vlist, 2 rule, 33 glue, 2 kern, 11 penalty, 6 glyph, 47 attribute
+, 68 glue_spec, 41 attribute_list, 3 write, 4 local_par, 16 pdf_literal, 8 pdf_r
+efxform, 28 pdf_colorstack nodes
+   avail lists: 1:1,2:18241,3:6840,4:2692,5:93,6:215,7:27,8:45,9:319,10:18
+ 38835 multiletter control sequences out of 65536+600000
+ 60 fonts using 4576839 bytes
+ 73i,17n,91p,1236b,1103s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmsans9-regular.otf
+></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmsans8-oblique.ot
+f></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.o
+tf></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmmono10-regular
+.otf></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmsans12-regul
+ar.otf></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/fontawesome/Fon
+tAwesome.otf></usr/local/texlive/2015/texmf-dist/fonts/opentype/public/lm/lmsans
+10-regular.otf><</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb><</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/zapfding
+/uzdr.pfb>
+Output written on mhstar-example.pdf (10 pages, 280665 bytes).
 
-<</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><<
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><</u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><</usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><</usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><</usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><</u
-sr/local/texlive/2015/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on mhstar-example.pdf (2 pages, 121818 bytes).
-
-PDF statistics: 243 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 8 named destinations out of 1000 (max. 131072)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+PDF statistics: 850 PDF objects out of 1000 (max. 8388607)
+ 422 compressed objects within 5 object streams
+ 24 named destinations out of 1000 (max. 131072)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
 

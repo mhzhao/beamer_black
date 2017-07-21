@@ -11,8 +11,10 @@
 \usepackage[timeinterval=1]{tdclock}
 \usepackage{pifont}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usetikzlibrary{fadings}
 \usepackage{xparse}
+\usepackage{fontawesome}
 \pgfmathdeclarerandomlist{randomcolor}{
   {blue}
   {brown}
@@ -33,7 +35,10 @@
   {white}
   {yellow}
 }
-\newcommand\totalnum{\inserttotalframenumber}
+\newcommand\totalpage{\inserttotalframenumber}
+\newcommand\totalsection{\number\beamer@sectionmax}
+\newcommand{\interdissection}{0.95*13/\totalsection}
+\newcommand{\interdispage}{(0.95*13)/(\totalpage)}
 \setbeamertemplate{background}{
   \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
@@ -51,9 +56,30 @@
     \pgfmathrandomitem{\rndcolor}{randomcolor}
     \fill [color=\rndcolor] (\a/10,0.45) circle (0.06);
   };
-  \foreach \y in {1,...,\totalnum} 
+  \foreach \b in {1,...,\totalsection}
   {
-    \fill [color=orange] (\y,0.85) circle (0.06);
+    \foreach \c in {1,...,\totalpage}
+    {
+      %\pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection+(\c-1)*\interdispage}
+      %\pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection+(\c-1)*\interdispage}
+      %\node at (\dis,9.45) {\faBookmark};
+    };
+    \pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection}
+    \ifnum \number\c@section=\b
+    {\node at (\dis,9.44) {\color{red}\faBell};
+       \foreach \d in {\insertsectionstartpage,...,\insertsectionendpage}
+       {
+         \pgfmathsetmacro{\diss}{(\d-\insertsectionstartpage+1)*\interdispage+(\b-1)*\interdissection}
+         \ifnum \number\insertpagenumber=\d
+         \node at (\diss,9.44) {\color{red}\tiny\faCircle};
+         \else
+         \node at (\diss,9.44) {\tiny\faCircleO};
+         \fi
+       }
+  }
+    \else
+    \node at (\dis,9.44) {\faBellO};
+    \fi
   };
   %\ifnum\thepage>10\relax%
   % \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
