@@ -35,10 +35,29 @@
   {white}
   {yellow}
 }
-\newcommand\totalpage{\inserttotalframenumber}
-\newcommand\totalsection{\number\beamer@sectionmax}
-\newcommand{\interdissection}{0.95*13/\totalsection}
-\newcommand{\interdispage}{(0.95*13)/(\totalpage)}
+\def\convertto#1#2{\strip@pt\dimexpr #2*65536/\number\dimexpr 1#1}
+\newcommand{\paperw}{\number\convertto{cm}{\the\paperwidth}} % convert pt to cm
+\newcommand{\paperh}{\number\convertto{cm}{\the\paperheight}} % convert pt to cm
+\newcommand{\totalpage}{\inserttotalframenumber}
+\newcommand{\totalsection}{\number\beamer@sectionmax}
+\newcommand{\interdissection}{0.95*(\paperw)/\totalsection} 
+\newcommand{\interdispage}{(0.95*(\paperw))/\totalpage}% \paperw must enclosed in brackets here
+\newcommand{\interdispagee}{(0.95*(\paperw))/(\totalpage+\totalsection-1)}% \paperw must enclosed in brackets here
+\newcommand{\total}{\pgfmathint{10*\paperw}\pgfmathresult}
+
+% to read the pages information of sections
+\IfFileExists{mhstar.tex}{ %truth
+  \input{mhstar.tex}
+}{}
+\def\get(#1)#2{
+  \foreach[count=\i] \element in #2 {
+    \ifnum \i = #1 \element\fi
+  }
+}
+% to store the pages information of sections, startpage and endpage of each section
+\newwrite\tmpwrite
+\immediate\openout\tmpwrite=mhstar.tex
+
 \setbeamertemplate{background}{
   \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
@@ -50,37 +69,417 @@
   \path [left color = black,right color = black,middle color = green] (0.8*\the\paperwidth,0.91*\the\paperheight) rectangle (1.0*\the\paperwidth,0.92*\the\paperheight);
   \node [color=white] at (12,9.1) 
   {\initclock{\color{yellow}{\factorclockfont{0.5}\tdtime}}};
-  \foreach \x in {1,...,500}
+  \pgfmathsetmacro{\total}{5*\paperw}
+  \def\dotrange{\total}
+  \foreach \x in {1,...,600}
   {
-    \pgfmathrandominteger{\a}{0}{130}
     \pgfmathrandomitem{\rndcolor}{randomcolor}
+    \pgfmathrandominteger{\a}{0}{\dotrange}
     \fill [color=\rndcolor] (\a/10,0.45) circle (0.06);
+    \fill [color=\rndcolor] (-\a/10+\paperw,0.45) circle (0.06);
   };
+
+\IfFileExists{mhstar.tex}{ %truth
+  \ifnum \totalsection>0
+    \ifnum \number\c@section>0
+    \ifnum \totalsection=1
+    \foreach \d in {\onebeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+1)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>1
+    \foreach \d in {\onebeg,...,\twobeg}{
+      \ifnum \d<\twobeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+1)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=2
+    \foreach \d in {\twobeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+2)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>2
+    \foreach \d in {\twobeg,...,\threebeg}{
+      \ifnum \d<\threebeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+2)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=3
+    \foreach \d in {\threebeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+3)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>3
+    \foreach \d in {\threebeg,...,\fourbeg}{
+      \ifnum \d<\fourbeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+3)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=4
+    \foreach \d in {\fourbeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+4)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>4
+    \foreach \d in {\fourbeg,...,\fivebeg}{
+      \ifnum \d<\fivebeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+4)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=5
+    \foreach \d in {\fivebeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+5)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>5
+    \foreach \d in {\fivebeg,...,\sixbeg}{
+      \ifnum \d<\sixbeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+5)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=6
+    \foreach \d in {\sixbeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+6)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>6
+    \foreach \d in {\sixbeg,...,\sevenbeg}{
+      \ifnum \d<\sevenbeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+6)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=7
+    \foreach \d in {\sevenbeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+7)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>7
+    \foreach \d in {\sevenbeg,...,\eightbeg}{
+      \ifnum \d<\eightbeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+7)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=8
+    \foreach \d in {\eightbeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+8)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>8
+    \foreach \d in {\eightbeg,...,\ninebeg}{
+      \ifnum \d<\ninebeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+8)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=9
+    \foreach \d in {\ninebeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+9)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \else
+    \ifnum \totalsection>9
+    \foreach \d in {\ninebeg,...,\tenbeg}{
+      \ifnum \d<\tenbeg
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+9)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+      \fi
+    };
+    \fi
+    \fi
+    \ifnum \totalsection=10
+    \foreach \d in {\tenbeg,...,\totalpage}{
+      \pgfmathsetmacro{\ddis}{0.025*(\paperw)+(\d-\onebeg+10)*(\interdispagee)};
+      \node at (\ddis,0.9854*\paperh) {\tiny\faCircleO};
+    };
+    \fi
+    \ifnum \totalsection=10
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssss}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssss}{0.025*(\paperw)+(\sevenbeg-\onebeg+6)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssssss}{0.025*(\paperw)+(\eightbeg-\onebeg+7)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssssss}{0.025*(\paperw)+(\ninebeg-\onebeg+8)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssssssss}{0.025*(\paperw)+(\tenbeg-\onebeg+10)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssssssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=9
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssss}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssss}{0.025*(\paperw)+(\sevenbeg-\onebeg+6)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssssss}{0.025*(\paperw)+(\eightbeg-\onebeg+7)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssssss}{0.025*(\paperw)+(\ninebeg-\onebeg+8)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=8
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssss}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssss}{0.025*(\paperw)+(\sevenbeg-\onebeg+6)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssssss}{0.025*(\paperw)+(\eightbeg-\onebeg+7)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=7
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssss}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+     \pgfmathsetmacro{\disssssss}{0.025*(\paperw)+(\sevenbeg-\onebeg+6)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=6
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \pgfmathsetmacro{\dissssss}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=5
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \pgfmathsetmacro{\disssss}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disssss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=4
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \pgfmathsetmacro{\dissss}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\dissss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=3
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \pgfmathsetmacro{\disss}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\disss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=2
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+     \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+      \node at (\diss,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \ifnum \totalsection=1
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*(\interdispagee)}
+      \node at (\dis,0.9854*\paperh) {\footnotesize\faBellO};
+    \fi
+    \fi
   \foreach \b in {1,...,\totalsection}
   {
-    \foreach \c in {1,...,\totalpage}
-    {
-      %\pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection+(\c-1)*\interdispage}
-      %\pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection+(\c-1)*\interdispage}
-      %\node at (\dis,9.45) {\faBookmark};
-    };
-    \pgfmathsetmacro{\dis}{0.025*13+(\b-1)*\interdissection}
+      
+    %\pgfmathsetmacro{\dis}{0.025*(\paperw)+0.95*\paperw}
+    \ifnum \number\c@section>0
+    \node at (0.975*\paperw,0.9854*\paperh) {\footnotesize\faBellO};
     \ifnum \number\c@section=\b
-    {\node at (\dis,9.44) {\color{red}\faBell};
+    {
+     \pgfmathsetmacro{\sectionspage}{\insertsectionendpage-\insertsectionstartpage+1}
+      \ifnum \thepage=\insertsectionendpage
+      \ifnum \number\c@section=1
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\onebeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=2
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\twobeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=3
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\threebeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=4
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\fourbeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=5
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\fivebeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=6
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\sixbeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=7
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\sevenbeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=8
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\eigthbeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=9
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\ninebeg}{\insertsectionstartpage}}
+      \else
+      \ifnum \number\c@section=10
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\tenbeg}{\insertsectionstartpage}}
+      \else
+      \immediate\write\tmpwrite{\noexpand\newcommand{\noexpand\totalbeg}{\insertsectionendpage}}
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \fi
+      \ifnum \thepage=\totalpage
+      \immediate\closeout\tmpwrite
+      \fi
+     %\pgfmathsetmacro{\dis}{0.025*(\paperw)+0.95*\paperw}
+     \ifnum \number\c@section=1
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\onebeg-\onebeg)*\interdispagee}
+     \else
+     \ifnum \number\c@section=2
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\twobeg-\onebeg+1)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=3
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\threebeg-\onebeg+2)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=4
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\fourbeg-\onebeg+3)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=5
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\fivebeg-\onebeg+4)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=6
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\sixbeg-\onebeg+5)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=7
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\sevenbeg-\onebeg+6)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=8
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\eightbeg-\onebeg+7)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=9
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\ninebeg-\onebeg+8)*(\interdispagee)}
+     \else
+     \ifnum \number\c@section=10
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)+(\tenbeg-\onebeg+9)*(\interdispagee)}
+     \else
+     \pgfmathsetmacro{\dis}{0.025*(\paperw)}
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \fi
+     \node at (\dis,0.9854*\paperh) {\color{red}\footnotesize\faBell};
+     \node at (\dis,0.9854*\paperh) {\color{red}\footnotesize\faBellO};
        \foreach \d in {\insertsectionstartpage,...,\insertsectionendpage}
        {
-         \pgfmathsetmacro{\diss}{(\d-\insertsectionstartpage+1)*\interdispage+(\b-1)*\interdissection}
+         \pgfmathsetmacro{\diss}{(\d-\insertsectionstartpage+1)*\interdispagee}
          \ifnum \number\insertpagenumber=\d
-         \node at (\diss,9.44) {\color{red}\tiny\faCircle};
+           \node at (\diss+\dis,0.9854*\paperh) {\color{red}\tiny\faCircle};
          \else
-         \node at (\diss,9.44) {\tiny\faCircleO};
+           \node at (\diss+\dis,0.9854*\paperh) {\tiny\faCircleO};
          \fi
        }
-  }
-    \else
-    \node at (\dis,9.44) {\faBellO};
+    }
+    \else 
+    %\node at (\dis,0.9854*\paperh) {\color{red}\footnotesize\faBellO};
     \fi
+    \fi
+    \ifnum \number\c@section=0
+      \node at (0.025*\paperw,0.98646*\paperh) {\footnotesize\faBookmark};% no brackets for \paperw here
+      \node at (0.975*\paperw,0.98646*\paperh) {\footnotesize\faBookmark};
+      \foreach \c in {2,...,\totalpage}
+      {
+         \pgfmathsetmacro{\diss}{0.025*(\paperw)+(\c-1)*\interdispage}
+         \node at (\diss,0.9854*\paperh) {\tiny\faCircleO};
+      }
+    \fi
+    %\node at (\dis,7.45) {\insertsectionstartpage};
   };
+  \fi
+}{}
   %\ifnum\thepage>10\relax%
   % \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
   % \fi
