@@ -7,6 +7,6 @@ Add section & page indicator on the top of the page, for the pages only give the
 
 Newest fixing
 Fixed indicator spacing problem, but the maxium section supporting is 10 for indicator.
-To show the indicator, one need compile twice
+To show the indicator correctly, one need compile three times!!! 
 pdflatex & lualatex compiling can give the correct time showing, but not xelatex
-If interruptted during the compiling, one need delete mhstar.tex, fix your problem, then compile twice to show the progress indicator
+If interruptted during the compiling, fix your problem, then compile twice to show the progress indicator, if not work, try three times
