@@ -11,21 +11,35 @@
 \usepackage{tikz}
 \usepackage{textpos}
 \usepackage{assoccnt}
-\newcounter{totalsections}
-\DeclareAssociatedCounters{section}{totalsections}
+\usepackage{fontawesome}
+\usepackage{tikzsymbols}
+\pgfmathdeclarerandomlist{randomshape}{
+  {\faSpinner}
+  {\faBars}
+  {\faFire}
+  {\faStar}
+  {\faCog}
+  {\faTree}
+  {\faHourglassHalf}
+}
 % Headline and footline
 \defbeamertemplate*{footline}{mhstar theme} {
   \leavevmode%
   \hbox{
-  \begin{beamercolorbox}[wd=.4\paperwidth,ht=3.5ex,dp=1.125ex,leftskip=.3cm, rightskip=.3cm plus1fil]{author in head/foot}%
+  \begin{beamercolorbox}[wd=.3\paperwidth,left,ht=2.5ex,dp=1.125ex,leftskip=.3cm, rightskip=.3cm plus1fil]{author in head/foot}%
     \usebeamerfont{author in head/foot}
 	\insertshortauthor  
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.6\paperwidth,ht=3.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-    \usebeamerfont{title in head/foot}{\textit \insertshorttitle}%
-    \hskip50ex plus1fil%
+  \begin{beamercolorbox}[wd=.45\paperwidth,center,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm]{title in head/foot}%
+    \usebeamerfont{title in head/foot}{\centering \textit \insertshorttitle}%
+ \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,right,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
 		% \insertpagenumber\,/\,\insertpresentationendpage %% Want FRAME, not SLIDE number
-		\insertframenumber/\inserttotalframenumber
+		\insertdate\space\space
+        \pgfmathrandomitem{\rndsplit}{randomshape}
+        %\Summertree[2.0]
+        {\color{green}\rndsplit}
+        \space\space\insertframenumber/\inserttotalframenumber
  \end{beamercolorbox}%
  }
 }
@@ -36,23 +50,6 @@
   \hbox{
     \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.65ex,dp=1.5ex,right]{section in head/foot}%
       \usebeamerfont{section in head/foot}
-      %\insertpagenumber\hspace*{2ex}
-      
-      %\insertsectionstartpage\hspace*{2ex}
-      
-      %\insertsectionendpage\hspace*{2ex}
-      
-      %\number\value{totalsections}\hspace*{2ex}
-      
-      %\number\beamer@sectionmax%\hspace*{2ex}
-      %\number\beamer@sectioncount\hspace*{2ex}
-      %\number\beamer@subsectionmax\hspace*{2ex}
-      %\number\beamer@totalheads\hspace*{2ex}
-      %\number\beamer@headcounter\hspace*{2ex}
-      %\number\beamer@xpos\hspace*{2ex}
-      %\number\beamer@ypos\hspace*{2ex}
-      %\number\beamer@sectionadjust\hspace*{2ex}
-      %\number\beamer@tocsectionnumber%\hspace*{2ex}
     \end{beamercolorbox}%
   }
 }
